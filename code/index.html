@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+   
+   <head>
+      <meta charset = "UTF-8">
+      <title>NM SDK</title>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+      
+   </head>
+
+   <body>
+      
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+      
+     
+
+      <div>
+           <button id="changeName" class="btn btn-info" style="margin-top:100px" >Change Name</button>
+           
+           <script src="headersdk-min.js"></script>
+            <script src = "index.js"></script>
+            <div id = "app" style="z-index:1031; position: relative;left: 78%; width:30px; top:-300px;"></div>
+       </div>     
+   </body>
+ 
+    <script type='text/javascript'>
+
+/********** This is in our legacy app ***********/
+//Set up our events in jQuery
+$(document).ready(function() {
+  Header.initialize();
+  //Handle the click event on the button
+  $('#changeName').click(function(e) {
+    e.preventDefault()
+    reactComponents('app').message.setState({
+      userToMessage: 'It Changed!'
+    });
+    
+  })
+})
+
+    </script>
+</html>
